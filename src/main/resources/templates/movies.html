@@ -20,14 +20,11 @@
 </head>
 <body>
 
-	<h1>Best of the year by: <span>[[${name}]]</span></h1>
+	<h1>Best <span>Movie</span> of the year: </h1>
 	
-	<ul>
-	
-		<li><a href="/movies">Best movies</a></li>
-		<li><a href="/songs">Best songs</a></li>
-	
-	</ul>
+<!-- 	<p>[[${movies}]]</p> -->
+	<p th:text="${movies}"></p>
+	<a href="/">Home</a>
 
 </body>
 </html>
