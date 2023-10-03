@@ -1,14 +1,9 @@
 <th:block th:replace="../fragments/head-fragment :: head"></th:block>
-<body>
+<body class="bg-dark text-white">
+	<th:block th:replace="../fragments/header :: header"></th:block>
 
-	<h1>Best of the year by: <span>[[${name}]]</span></h1>
+	<h1 class="text-center my-3">HOME</h1>
 	
-	<ul>
-	
-		<li><a href="/movies">Best movies</a></li>
-		<li><a href="/songs">Best songs</a></li>
-	
-	</ul>
 
 </body>
 </html>

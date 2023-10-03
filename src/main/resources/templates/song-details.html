@@ -1,11 +1,18 @@
 <th:block th:replace="../fragments/head-fragment :: head"></th:block>
-<body>
+<body class="bg-dark text-white">
 
-	<h1><span>Song</span> details: </h1>
+	<th:block th:replace="../fragments/header :: header"></th:block>
+
+	<div class="container text-center my-3">
+		
+		<h1><span>Song</span> details </h1>
+		
+		<h2>
+<!-- 			<span class="text-primary">[[${songTitle}]]</span> -->
+			Titolo: <span class="text-primary" th:text="${songTitle}"></span>
+		</h2>
 	
-<!-- 	<p>[[${movies}]]</p> -->
-	<p th:text="${songTitle}"></p>
-	<a href="/">Home</a>
+	</div>
 
 </body>
 </html>

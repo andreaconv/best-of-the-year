@@ -1,24 +1,27 @@
 <th:block th:replace="../fragments/head-fragment :: head"></th:block>
-<body>
+<body class="bg-dark text-white">
 
-	<h1>Best <span>Songs</span> of the year: </h1>
-	
-	<ul>
-	
-		<li
-			th:each="obj : ${songsList}"
-			th:object="${obj}"
-			>
-			<a th:href="@{/songs/{id}(id=${obj.id})}">
-			
-			[[${obj.titolo}]]  
-			
-			</a>
+	<th:block th:replace="../fragments/header :: header"></th:block>
+
+	<div class="container text-center my-3">
+		<h1><span>Songs</span> of the year: </h1>
 		
-		</li>
-	
-	</ul>
-	<a href="/">Home</a>
+		<ul>
+		
+			<li
+				th:each="obj : ${songsList}"
+				th:object="${obj}"
+				>
+				<a class="btn btn-warning my-2" th:href="@{/songs/{id}(id=${obj.id})}">
+				
+				[[${obj.titolo}]]  
+				
+				</a>
+			
+			</li>
+		
+		</ul>
+	</div>
 
 </body>
 </html>

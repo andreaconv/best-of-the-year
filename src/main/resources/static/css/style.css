@@ -1,8 +1,7 @@
 @charset "ISO-8859-1";
 
-body{
-background-color: #1a1a1a;
-color: white;
+ul{
+	list-style: none;
 }
 	
 span{
