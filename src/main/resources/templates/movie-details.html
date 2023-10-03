@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Best Of The Year</title>
+<style>
+	body{
+	background-color: #1a1a1a;
+	color: white;
+	}
+	
+	span{
+	color: green;
+	}
+	
+	a{
+	color:yellow;
+	}
+</style>
+</head>
+<body>
+
+	<h1><span>Movie</span> details: </h1>
+	
+<!-- 	<p>[[${movies}]]</p> -->
+	<p th:text="${movieTitle}"></p>
+	<a href="/">Home</a>
+
+</body>
+</html>

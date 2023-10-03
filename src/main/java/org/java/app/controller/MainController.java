@@ -9,7 +9,7 @@ import org.java.app.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
@@ -64,5 +64,31 @@ public class MainController {
 				.collect(Collectors.joining(", "));
 		model.addAttribute("songs", songsList);
 		return "songs";
+	}
+	
+	@GetMapping("/movies/{id}")
+	public String getMovieDetails(@PathVariable int id, Model model) {
+		
+		Movie movie = getBestMovies().stream()
+							.filter(m -> m.getId() == id)
+						.findFirst().get();
+		String movieTitle = movie.getTitolo();
+		
+		model.addAttribute("movieTitle", movieTitle);
+		
+		return "movie-details";
+	}
+	
+	@GetMapping("/songs/{id}")
+	public String getSongDetails(@PathVariable int id, Model model) {
+		
+		Song song = getBestSongs().stream()
+				.filter(s -> s.getId() == id)
+				.findFirst().get();
+		String songTitle = song.getTitolo();
+		
+		model.addAttribute("songTitle", songTitle);
+		
+		return "song-details";
 	}
 }

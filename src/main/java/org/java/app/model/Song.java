@@ -2,7 +2,7 @@ package org.java.app.model;
 
 public class Song {
 
-	static private int id = 0;
+	private int id;
 	private String titolo;
 	
 	//COSTRUTTORE
@@ -12,11 +12,11 @@ public class Song {
 	}
 
 	//ID
-	public static int getId() {
+	public int getId() {
 		return id;
 	}
-	public static void setId(int id) {
-		Song.id = id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	//TITOLO
@@ -25,5 +25,10 @@ public class Song {
 	}
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
+	}
+	
+	@Override
+	public String toString() {
+		return getTitolo();
 	}
 }
