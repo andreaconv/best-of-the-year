@@ -1,9 +1,14 @@
-<th:block th:replace="../fragments/head-fragment :: head"></th:block>
+<th:block th:replace="~{../fragments/head-fragment :: head}"></th:block>
 <body class="bg-dark text-white">
 	<th:block th:replace="../fragments/header :: header"></th:block>
-
-	<h1 class="text-center my-3">HOME</h1>
 	
+	<div class="container text-center my-3">
+
+		<h1 class="my-5">HOME</h1>
+		
+		<img alt="movie" th:src="@{/images/cinema.jpg}" width="100%">
+		
+	</div>
 
 </body>
 </html>
