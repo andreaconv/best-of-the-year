@@ -6,7 +6,7 @@ public class Song {
 	private String titolo;
 	
 	//COSTRUTTORE
-	public Song (String titolo, int id) {
+	public Song (int id, String titolo) {
 		setId(id);
 		setTitolo(titolo);
 	}

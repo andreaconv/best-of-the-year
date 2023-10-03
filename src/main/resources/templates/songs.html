@@ -3,8 +3,21 @@
 
 	<h1>Best <span>Songs</span> of the year: </h1>
 	
-	<p>[[${songs}]]</p>
-<!-- 	<p th:text="${songs}"></p> -->
+	<ul>
+	
+		<li
+			th:each="obj : ${songsList}"
+			th:object="${obj}"
+			>
+			<a th:href="@{/songs/{id}(id=${obj.id})}">
+			
+			[[${obj.titolo}]]  
+			
+			</a>
+		
+		</li>
+	
+	</ul>
 	<a href="/">Home</a>
 
 </body>

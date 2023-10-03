@@ -1,6 +1,7 @@
 package org.java.app.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,38 +32,40 @@ public class MainController {
 	}
 	
 	public List<Movie> getBestMovies() {
-		List<Movie> Movies = new ArrayList<>();
-		Movies.add(new Movie("Ritorno al futuro", 1));
-		Movies.add(new Movie("Sherlock Holmes", 2));
-		Movies.add(new Movie("Inside Man", 3));
+		List<Movie> movies = new ArrayList<>();
+		movies.add(new Movie(1, "Ritorno al futuro"));
+		movies.add(new Movie(2, "Sherlock Holmes"));
+		movies.add(new Movie(3, "Inside Man"));
 
-		return Movies;
+		return movies;
 	}
 
 	public List<Song> getBestSongs() {
-		List<Song> Songs = new ArrayList<>();
-		Songs.add(new Song("With Or Without You", 1));
-		Songs.add(new Song("Ruby", 2));
-		Songs.add(new Song("Narcotic", 3));
+		List<Song> songs = new ArrayList<>();
+		songs.add(new Song(1, "With Or Without You"));
+		songs.add(new Song(2, "Ruby"));
+		songs.add(new Song(3, "Narcotic"));
 
-		return Songs;
+		return songs;
 	}
 	
 	@GetMapping("/movies")
     public String movies(Model model) {
-        String moviesList = getBestMovies().stream()
-        		.map(m -> m.getTitolo())
-        		.collect(Collectors.joining(", "));
-        model.addAttribute("movies", moviesList);
+		
+		//travaso l'array list da moives a movieList
+		List<Movie> moviesList = getBestMovies();
+
+		//movieList può essere sostituito con getBestMovies() perché ritorna già una lista
+		model.addAttribute("moviesList", moviesList);
+		
         return "movies";
     }
 	
 	@GetMapping("/songs")
 	public String songs(Model model) {
-		String songsList = getBestSongs().stream()
-				.map(s -> s.getTitolo())
-				.collect(Collectors.joining(", "));
-		model.addAttribute("songs", songsList);
+		
+		List<Song> songsList = getBestSongs();
+		model.addAttribute("songsList", songsList);
 		return "songs";
 	}
 	

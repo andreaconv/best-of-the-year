@@ -6,7 +6,7 @@ public class Movie {
 	private String titolo;
 	
 	//COSTRUTTORE
-	public Movie(String titolo, int id) {
+	public Movie (int id, String titolo) {
 		setId(id);
 		setTitolo(titolo);
 	}
