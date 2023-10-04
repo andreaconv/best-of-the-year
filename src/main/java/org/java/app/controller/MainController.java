@@ -75,9 +75,10 @@ public class MainController {
 		Movie movie = getBestMovies().stream()
 							.filter(m -> m.getId() == id)
 						.findFirst().get();
-		String movieTitle = movie.getTitolo();
 		
-		model.addAttribute("movieTitle", movieTitle);
+//		String movieTitle = movie.getTitolo();
+		
+		model.addAttribute("movie", movie);
 		
 		return "movie-details";
 	}
@@ -88,9 +89,10 @@ public class MainController {
 		Song song = getBestSongs().stream()
 				.filter(s -> s.getId() == id)
 				.findFirst().get();
-		String songTitle = song.getTitolo();
 		
-		model.addAttribute("songTitle", songTitle);
+//		String songTitle = song.getTitolo();
+		
+		model.addAttribute("song", song);
 		
 		return "song-details";
 	}
